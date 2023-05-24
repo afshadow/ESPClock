@@ -36,8 +36,8 @@ IPAddress apIP(192, 168, 4, 1);
 #include "P_help.h"
 #include "P_MQTT.h"
 // =======================================================================
-String ssid = "FunBox3-56F0";
-String password = "A7HLDT4F7ZZW";
+String ssid = "fhome";
+String password = "2808197442";
 String ssidAP = "WiFi-Clock";
 String passwordAP = "";
 String weatherKey = "*******************************";
@@ -142,10 +142,10 @@ float celsius;
 //==============================================================================================
 void setup() {
   Serial.begin(115200);
-  initMAX7219();
+ // initMAX7219();
   sendCmdAll(CMD_SHUTDOWN, 1);
   sendCmdAll(CMD_INTENSITY, 1); 
-  temper();
+ // temper();
   SPIFFS.begin();
 //***********HTTP сторінки для налаштуваня ESP
   server.on("/", [](){Serial.println("admin.html"); server.send_P(200, "text/html", PAGE_WiFiSettings);});
